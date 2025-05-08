@@ -13,7 +13,7 @@ if "data" in st.session_state:
     df_data = st.session_state["data"]
 else:
     st.markdown('### Erro ao carregar dados. Página ininial incorreta.')
-    st.switch_page("1_🏠Home.py")
+    #st.switch_page("1_🏠Home.py")
     st.stop()
 
 
