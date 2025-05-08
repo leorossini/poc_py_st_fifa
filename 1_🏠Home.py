@@ -2,10 +2,12 @@ import streamlit as st
 import webbrowser as wb
 import pandas as pd
 from datetime import datetime
+from pathlib import Path
 
 # dados
 if "data" not in st.session_state:
-    df_data = pd.read_csv("Dados\\CLEAN_FIFA23_official_data.csv", index_col=0)
+    dir = Path('Dados')
+    df_data = pd.read_csv(dir / "CLEAN_FIFA23_official_data.csv", index_col=0)
     df_data = df_data.loc[(df_data["Contract Valid Until"] >= datetime.today().year) 
                           & (df_data["Value(£)"] > 0)
                           ]\
