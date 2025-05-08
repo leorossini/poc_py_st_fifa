@@ -2,10 +2,10 @@ import streamlit as st
 import time 
 import webbrowser as wb
 import pandas as pd
-import locale
+#import locale
 
 # config 
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+#locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 st.set_page_config(layout='wide')
 
 # dados 
@@ -45,6 +45,6 @@ st.subheader(f'Nota {stats['Overall']}')
 st.progress(int(stats['Overall']))
 
 col1, col2, col3, col4 = st.columns(4)
-col1.metric(label="Valor de Mercado", value=f'£ {locale.format_string("%.0f", stats["Value(£)"], grouping=True)}')
-col2.metric(label="Remuneração Semanal", value=f'£ {locale.format_string("%.0f", stats["Wage(£)"], grouping=True)}')
-col3.metric(label="Recisão", value=f'£ {locale.format_string("%.0f", stats["Release Clause(£)"], grouping=True)}')
+col1.metric(label="Valor de Mercado", value=f'£ {stats["Value(£)"]:,.0f}')
+col2.metric(label="Remuneração Semanal", value=f'£ {stats["Wage(£)"]:,.0f}')
+col3.metric(label="Recisão", value=f'£ {stats["Release Clause(£)"]:,.0f}')

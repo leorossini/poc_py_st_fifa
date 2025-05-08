@@ -1,10 +1,8 @@
 import streamlit as st
 import webbrowser as wb
 import pandas as pd
-import locale
 
 # config 
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 st.set_page_config(layout='wide')
 
 # dados 
